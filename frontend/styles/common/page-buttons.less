@@ -1,0 +1,150 @@
+@import "vars";
+
+.page-btn {
+  outline: none;
+  border: @btn-border;
+  color: @main-font-color;
+  font-size: @btn-font-size;
+  font-weight: 800;
+  background: @btn-bg-color;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  -webkit-transition: box-shadow .2s, transform .1s;
+  -moz-transition: box-shadow .2s, transform .1s;
+  -ms-transition: box-shadow .2s, transform .1s;
+  -o-transition: box-shadow .2s, transform .1s;
+  transition: box-shadow .2s, transform .1s;
+
+  &:hover {
+    -webkit-box-shadow: 0 0 5px 5px darken(@bg-color, 10%);
+    -moz-box-shadow: 0 0 5px 5px darken(@bg-color, 10%);
+    box-shadow: 0 0 5px 5px darken(@bg-color, 10%);
+  }
+
+  &:active {
+    -webkit-transform: scale(.95);
+    -moz-transform: scale(.95);
+    -ms-transform: scale(.95);
+    -o-transform: scale(.95);
+    transform: scale(.95);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: .5;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.currency-btn {
+  display: block;
+  color: @main-font-color;
+  font-size: 3rem;
+  font-weight: 800;
+  text-shadow: 0 0 3px #000;
+  width: 200px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  border: 3px solid @btn-currency-border-color;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  background: lighten(@bg-color, 10%);
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+  
+  &:disabled {
+    opacity: .3;
+    cursor: default;
+  }
+}
+
+.start-btn {
+  text-decoration: none;
+  padding: 10px 10px;
+  display: inline-block;
+}
+
+.login-btn {
+  width: 100%;
+  font-weight: 900;
+  color: @main-font-color;
+  background: @bg-color;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -ms-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+
+  &:hover {
+    background: lighten(@bg-color, 10%);
+  }
+
+  &:first-of-type {
+    margin-bottom: 5px;
+  }
+}
+
+.calculate-btn,.reset-selection-btn {
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+}
+
+.reset-selection-btn {
+  background: @btn-reset-bg;
+}
+
+.scroll-btn {
+  width: 100px;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  opacity: .2;
+  display: none;
+
+  -webkit-transition: box-shadow .2s, transform .1s, opacity .2s;
+  -moz-transition: box-shadow .2s, transform .1s, opacity .2s;
+  -ms-transition: box-shadow .2s, transform .1s, opacity .2s;
+  -o-transition: box-shadow .2s, transform .1s, opacity .2s;
+  transition: box-shadow .2s, transform .1s, opacity .2s;
+
+  &:hover {
+    -webkit-box-shadow: 0 0 5px 5px darken(@bg-color, 10%);
+    -moz-box-shadow: 0 0 5px 5px darken(@bg-color, 10%);
+    box-shadow: 0 0 5px 5px darken(@bg-color, 10%);
+
+    opacity: 1;
+  }
+}
+
+.active-btn {
+  display: block !important;
+}
+
+.selected-currency {
+  background: @btn-reset-bg;
+}
+
+.reset-values-btn {
+  width: 100%;
+  margin-bottom: 10px;
+}

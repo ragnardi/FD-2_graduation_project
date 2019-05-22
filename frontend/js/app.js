@@ -1,6 +1,6 @@
 import '../styles/app.less';
 
-//import Features from './helpers/Features';
+import Features from './helpers/Features';
 
 import Utils from './helpers/Utils';
 
@@ -11,10 +11,12 @@ import About from './views/pages/About';
 import Error404 from './views/pages/error404';
 
 import CurrencyList from './views/pages/currency/CurrencyList';
+import Calculate from './views/pages/currency/Calculate';
 
 const Routes = {
     '/': About,
-    '/currencyList': CurrencyList
+    '/currencyList': CurrencyList,
+    '/calculation': Calculate
 };
 
 function router() {
@@ -48,3 +50,6 @@ function router() {
 
 window.addEventListener('load', router);
 window.addEventListener('hashchange', router);
+window.addEventListener('scroll', Features.fixTimeBar);
+window.addEventListener('scroll', Features.showScrollBtn);
+document.getElementsByClassName('scroll-btn')[0].addEventListener('click', Features.scrollPage);

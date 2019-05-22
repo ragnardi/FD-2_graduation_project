@@ -5,3 +5,4 @@ frontend/package-lock.json
 api/node_modules
 api/package-lock.json
 .dist
+frontend/img

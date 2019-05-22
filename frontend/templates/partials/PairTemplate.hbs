@@ -1,0 +1,30 @@
+<div class="single-pair">
+	<div class="currency-inputs">
+		<label>
+			<span class="from">{{from}}</span>:
+			<input type="text" value="1.00" class="original-value" data-rate={{rate}}>
+		</label>
+
+		<label>
+			<span class="to">{{to}}</span>:
+			<input type="text" value={{rate}} class="target-value" data-inverse={{inverseRate}}>
+		</label>
+	</div>
+
+	<div class="support">
+		<div class="courses">
+			<p>
+				Курс <span class="from">{{from}}</span> к <span class="to">{{to}}</span>: {{rate}}
+			</p>
+			<p>
+				Курс <span class="to">{{to}}</span> к <span class="from">{{from}}</span>: {{inverseRate}}
+			</p>
+		</div>
+
+		<div class="refresh">
+			<button class="reset-values-btn page-btn reset-selection-btn">Сбросить</button>
+			<br>
+			<button class="page-btn rate-refresh-btn">Обновить курсы</button>
+		</div>
+	</div>
+</div>
