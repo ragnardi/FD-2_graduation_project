@@ -1,4 +1,4 @@
-import Component from '../../../views/Component';
+import Component from '../../component';
 
 import Currency_List from '../../../../templates/pages/currency/Currency_List.hbs';
 
@@ -29,6 +29,8 @@ class CurrencyList extends Component{
             }
         });
 
+        window.addEventListener('scroll', () => this.fixControls(controlBtns));
+
         controlBtns.addEventListener('click', event => {
             if (event.target.classList.contains('reset-selection-btn')) {
                 this.resetSelections(originalCurrencies, targetCurrencies);
@@ -47,8 +49,26 @@ class CurrencyList extends Component{
             return;
         }
 
+        sessionStorage.setItem('converseConfig', JSON.stringify([]));
         sessionStorage.setItem('currenciesToCalculate', JSON.stringify(this.currenciesToCalculate));
         window.location.hash = '#/calculation';
+    }
+
+    fixControls(controlBtns) {
+        /*
+        Need to keep control buttons in visible area
+         */
+        if (window.location.hash === '#/currencyList') {
+            const triggerToControls = (document.getElementsByClassName('header')[0].offsetHeight +
+                document.getElementsByClassName('content-header')[0].offsetHeight +
+                document.getElementsByClassName('tutorial')[0].offsetHeight) - 70;
+
+            if (document.documentElement.scrollTop > triggerToControls) {
+                controlBtns.classList.add('sticky-controls');
+            } else if (document.documentElement.scrollTop < triggerToControls) {
+                controlBtns.classList.remove('sticky-controls');
+            }
+        }
     }
 
     resetSelections(originalCurrencies, targetCurrencies) {
@@ -67,6 +87,11 @@ class CurrencyList extends Component{
     }
 
     selectCurrencies(btn, originalCurrencies, targetCurrencies) {
+        /*
+        Making user able to choose just one currency from a left side, disable a same
+        currency from right, and to choose one or few target currencies from right,
+        disabling an analogs in left side
+         */
         if (btn.classList.contains('original')) {
             for (let originBtn in originalCurrencies) {
                 if (originalCurrencies.hasOwnProperty(originBtn)) {

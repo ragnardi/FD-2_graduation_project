@@ -1,4 +1,4 @@
-import Component from '../../views/component';
+import Component from '../component';
 
 import FooterTemplate from '../../../templates/partials/Footer.hbs';
 

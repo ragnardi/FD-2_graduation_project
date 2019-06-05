@@ -1,4 +1,4 @@
-import Component from '../../views/component';
+import Component from '../component';
 
 import AboutTemplate from '../../../templates/pages/About.hbs';
 

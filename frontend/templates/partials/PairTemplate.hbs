@@ -1,13 +1,13 @@
-<div class="single-pair">
+<div class="single-pair" data-target={{to}}>
 	<div class="currency-inputs">
 		<label>
 			<span class="from">{{from}}</span>:
-			<input type="text" value="1.00" class="original-value" data-rate={{rate}}>
+			<input type="text" value={{originalAmount}} class="original-value" data-rate={{rate}}>
 		</label>
 
 		<label>
 			<span class="to">{{to}}</span>:
-			<input type="text" value={{rate}} class="target-value" data-inverse={{inverseRate}}>
+			<input type="text" value={{targetAmount}} class="target-value" data-inverse={{inverseRate}}>
 		</label>
 	</div>
 

@@ -1,17 +1,17 @@
 import '../styles/app.less';
 
-import Features from './helpers/Features';
+import Features from './helpers/features';
 
-import Utils from './helpers/Utils';
+import Utils from './helpers/utils';
 
-import Header from './views/partials/Header';
-import Footer from './views/partials/Footer';
+import Header from './views/partials/header';
+import Footer from './views/partials/footer';
 
-import About from './views/pages/About';
+import About from './views/pages/about';
 import Error404 from './views/pages/error404';
 
-import CurrencyList from './views/pages/currency/CurrencyList';
-import Calculate from './views/pages/currency/Calculate';
+import CurrencyList from './views/pages/currency/currencyList';
+import Calculate from './views/pages/currency/calculate';
 
 const Routes = {
     '/': About,

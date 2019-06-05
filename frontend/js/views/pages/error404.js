@@ -1,4 +1,4 @@
-import Component from '../../views/Component';
+import Component from '../component';
 
 import Error404Template from '../../../templates/pages/Error404.hbs';
 

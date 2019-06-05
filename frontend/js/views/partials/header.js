@@ -1,6 +1,6 @@
-import Component from '../../views/component';
+import Component from '../component';
 
-import Features from '../../helpers/Features';
+import Features from '../../helpers/features';
 
 import HeaderTemplate from '../../../templates/partials/Header.hbs';
 

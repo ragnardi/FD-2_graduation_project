@@ -18,13 +18,18 @@ class Features {
             } else {
                 document.documentElement.scrollTop -= 10;
             }
-        }, 10);
+        }, 5);
     }
 
     static startClock() {
+        /*
+        Renew time indexes one time in 100ms.
+        100ms was chose to make a fast response
+        when user change a city
+         */
         Features.checkTimeProperties();
 
-        setInterval(function() {
+        setInterval(() => {
             const date = new Date(),
                 timers = document.getElementsByClassName('time-cell'),
                 cities = document.getElementsByClassName('city-select'),
@@ -53,6 +58,9 @@ class Features {
     }
 
     static checkTimeProperties() {
+        /*
+        Need to keep changes in timers after page was reloaded
+         */
         const cities = document.getElementsByClassName('city-select');
 
         if (localStorage.getItem('timeConfig')) {
@@ -87,6 +95,9 @@ class Features {
     }
 
     static fixTimeBar() {
+        /*
+        Fixing time bar on the top of page while scrolling
+         */
         const timeBar = document.getElementsByClassName('time-bar')[0],
             triggerPosition = document.getElementsByClassName('header-info')[0].offsetHeight;
 
